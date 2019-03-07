@@ -14,17 +14,8 @@ public class Main {
 		
 		producer.sendMessage("Dit is een test.");
 		
-		System.out.println("Consumer1 received: " + consumer1.getMessage(1000));
-		System.out.println("Consumer2 received: " + consumer2.getMessage(1000));
-		
-		consumer2.closeConnection();
-		
-		producer.sendMessage("Dit is een test voor durable");
-		
-		consumer2.create("consumer2");
-		
-		System.out.println("Consumer1 received: " + consumer1.getMessage(1000));
-		System.out.println("Consumer2 received: " + consumer2.getMessage(1000));
+		System.out.println("Consumer1 received: \"" + consumer1.getMessage(1000) + "\"");
+		System.out.println("Consumer2 received: \"" + consumer2.getMessage(1000) + "\"");
 	}
 
 }
